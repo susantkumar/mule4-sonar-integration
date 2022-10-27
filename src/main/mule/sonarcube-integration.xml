@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c5f2b8c5-631c-44c4-bd55-7f07e930393b" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="sonarcube-integration" doc:id="0cdb0d15-ec3d-4a8a-8fd1-2cea91e1f6d0" >
+		<http:listener doc:name="Listener" doc:id="b084781a-56d2-4aaa-bf27-024fb60938ae" config-ref="HTTP_Listener_config" path="/sonartest"/>
+		<set-payload value="Hello Pfizer!!!" doc:name="Set Payload" doc:id="1a7c2e71-23b4-4e46-aec5-559cf2c5b3a8" />
+		<logger level="INFO" doc:name="Logger" doc:id="99de0c01-65a3-4193-9b62-57494e0d1464" message="#[payload]"/>
+	</flow>
+</mule>
