@@ -25,6 +25,9 @@
 		<jaxb.api.version>2.3.3</jaxb.api.version>
 		<jaxb.version>2.3.2</jaxb.version>
 		<sonar.sources>src</sonar.sources>
+		<sonar.organization>susantkumar</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		
 	</properties>
 
 	<build>
